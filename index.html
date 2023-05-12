@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRAVEL</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body{
+      height: 100vh;
+      background-image: url(../travellWeb/img/train-1728537_1920.jpg);
+      background-position: top-left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    header{
+      display:flex;
+      justify-content: space-between;
+      border-bottom: 2px solid black;
+      
+    }
+    .main_heading{
+      padding: 10px;
+    }
+    h1{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .toggle_btn{
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      width: 50px;
+      height: 60px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .toggle_bar{
+      height: 8px;
+      width :100%;
+      background-color: black;
+      
+    }
+    .list_links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:2rem;
+    }
+    li{
+      list-style-type: none;
+
+    }
+    li a{
+      text-decoration: none;
+      color:black;
+    }
+    li:nth-child(3){
+      margin-right: 10px;
+    }
+    .list_links li  a:hover{
+    background-color: green;
+    color: whitesmoke;
+    transform: scale(1,5);
+      
+    }
+    .dropdown_list {
+      float: right;
+      background-color: rgb(255, 249, 236);
+      padding-top: 10px;
+      text-align: center;
+      line-height: 2rem;
+      display: none;
+      width: 300px;
+    }
+
+    .dropdown_list li a{
+      font-size: 1.5rem;
+      display: block;
+    }
+
+    @media all and (max-width:600px) {
+      .list_links{
+        display: none;
+      }
+      .toggle_btn{
+        display: flex;
+      }
+    }
+    @media all and (min-width:600px){
+      .dropdown_list{
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="main_heading">
+      <h1>NK TRAVEL</h1>
+    </div> 
+    <div class="toggle_btn">
+       <span class="toggle_bar"></span>
+       <span class="toggle_bar"></span>
+       <span class="toggle_bar"></span>
+    </div>
+    <div class="list_links">
+      <li><a href=".">HOME</a></li>
+      <li><a href=".">MORE</a></li>
+      <li><a href=".">CONTACT</a></li>
+    </div>
+  
+  </header>
+  <div class="dropdown_list">
+    <li><a href=".">HOME</a></li>
+    <li><a href=".">MORE</a></li>
+    <li><a href=".">CONTACT</a></li>
+  </div>
+
+  <main>
+
+  </main>
+  <script>
+    let toggle_btn=document.querySelector('.toggle_btn')
+    let dropdown_menu=document.querySelector('.dropdown_list')
+  
+
+    toggle_btn.addEventListener("click",function(){
+      
+      if(dropdown_menu.style.display=== 'none'){
+        dropdown_menu.style.display="block";
+      }else{
+        dropdown_menu.style.display="none";
+      }
+    })
+
+  </script>
+</body>
+</html>
